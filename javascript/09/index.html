@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Assignment 9</title>
+  </head>
+  <body>
+    <h1>JavaScript Assignment 9</h1>
+
+    <script>
+      // 1
+      let arr = [-1, 2, -3, 4, -5];
+
+      // Solution 1
+      function replaceNegatives(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < 0) {
+            arr[i] = "Negative";
+          }
+        }
+        return arr;
+      }
+
+      console.log(replaceNegatives(arr));
+
+      // Solution 2
+      function replaceNegatives2(arr) {
+        let new_arr = [];
+
+        for (const i of arr) {
+          if (i < 0) {
+            new_arr.push("Negative");
+          } else {
+            new_arr.push(i);
+          }
+        }
+
+        return new_arr;
+      }
+
+      console.log(replaceNegatives2(arr));
+
+      // 2
+      let str = "string";
+
+      // Solution 1
+      function reversedString(str) {
+        let new_string = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          new_string += str[i];
+        }
+        return new_string;
+      }
+      console.log(reversedString(str));
+
+      // Solution 2
+      function reversedString2(str) {
+        return str.split("").reverse().join("");
+      }
+      console.log(reversedString2(str));
+    </script>
+  </body>
+</html>

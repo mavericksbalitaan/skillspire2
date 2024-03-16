@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Assignment 5</title>
+  </head>
+  <body>
+    <h1>JavaScript Assignment 5</h1>
+
+    <form id="myForm">
+      <label for="fname">First Name</label>
+      <input type="text" name="fname" value="" />
+      <br />
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" value="" />
+      <br />
+      <label for="email">Email</label>
+      <input type="email" name="email" value="" />
+      <br />
+      <label for="age">Age</label>
+      <input type="number" name="age" value="" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="myDiv"></div>
+
+    <script>
+      let myForm = document.getElementById("myForm");
+      let fname = document.querySelector("[name='fname']");
+      let lname = document.querySelector("[name='lname']");
+      let email = document.querySelector("[name='email']");
+      let age = document.querySelector("[name='age']");
+      let myDiv = document.getElementById("myDiv");
+
+      myForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        myDiv.innerHTML =
+          "<h1>First Name: " +
+          fname.value +
+          "</h1>" +
+          "<h1>Last Name: " +
+          lname.value +
+          "</h1>" +
+          "<h1>Email: " +
+          email.value +
+          "</h1>" +
+          "<h1>Age: " +
+          age.value +
+          "</h1>";
+      });
+    </script>
+  </body>
+</html>

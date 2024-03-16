@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Positioning Divs</title>
+    <style>
+      .row {
+        border: 1px solid black;
+        height: 200px;
+        display: flex;
+        align-items: center;
+      }
+
+      .row:nth-of-type(1) {
+        justify-content: center;
+      }
+
+      .row:nth-of-type(3) {
+        justify-content: flex-end;
+				padding-right: 10%;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+
+      #bluebox {
+        background-color: blue;
+      }
+
+      #redbox {
+        background-color: red;
+      }
+
+      #greenbox {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="box" id="bluebox"></div>
+    </div>
+    <div class="row">
+      <div class="box" id="redbox"></div>
+    </div>
+    <div class="row">
+      <div class="box" id="greenbox"></div>
+    </div>
+  </body>
+</html>

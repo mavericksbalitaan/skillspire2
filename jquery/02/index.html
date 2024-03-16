@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Assignment 2</title>
+    <style>
+      .yellow {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        display: inline-block;
+      }
+
+      .green {
+        width: 200px;
+        height: 300px;
+        background-color: green;
+        display: inline-block;
+      }
+
+      .purple {
+        width: 400px;
+        height: 300px;
+        background-color: purple;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="yellow"></div>
+      <div class="yellow"></div>
+      <div class="yellow"></div>
+    </div>
+    <div class="green"></div>
+    <div class="purple"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      // 1
+      $(".yellow").click(function () {
+        $(this).hide(2000);
+      });
+
+      // 2
+      $(".green").hover(function () {
+        $(this).fadeOut(2000);
+      });
+
+      // 3
+      $(".purple").click(function () {
+        $(this).slideUp(2000);
+      });
+    </script>
+  </body>
+</html>

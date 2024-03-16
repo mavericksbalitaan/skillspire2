@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Assignment 1</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px dotted #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toggle</h1>
+    <button type="button" id="toggle">Toggle Me</button>
+    <div class="toggle"></div>
+
+    <h1>Hide</h1>
+    <button type="button" id="hide">Hide Me</button>
+    <div class="hide"></div>
+
+    <h1>Change Background Color</h1>
+    <button type="button" id="bg-color">Change Background Color</button>
+    <div class="bg-color"></div>
+
+    <h1>Change Text Color</h1>
+    <button type="button" id="text-color">Change Background Color</button>
+    <div class="text-color">Hello World!</div>
+
+    <h1>Fade Out</h1>
+    <button type="button" id="fade-out">Fade Out Me</button>
+    <div class="fade-out"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      // 1
+      $("#toggle").click(() => {
+        $(".toggle").toggle(2000);
+      });
+
+      // 2
+      $("#hide").click(() => {
+        $(".hide").hide(2000);
+      });
+
+      // 3
+      $("#bg-color").click(() => {
+        $(".bg-color").css("background-color", "crimson");
+      });
+
+      // 4
+      $("#text-color").click(() => {
+        $(".text-color").css("color", "crimson");
+      });
+
+      // 5
+      $("#fade-out").click(() => {
+        $(".fade-out").fadeOut(2000);
+      });
+    </script>
+  </body>
+</html>

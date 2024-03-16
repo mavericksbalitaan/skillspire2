@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript Assignment 8</title>
+  </head>
+  <body>
+    <h1>JavaScript Assignment 8</h1>
+    <button type="button" id="myBtn">Change color</button>
+    <div id="myDiv" style="background-color: black; height: 500px"></div>
+
+    <script>
+      let myBtn = document.getElementById("myBtn");
+      let myDiv = document.getElementById("myDiv");
+
+      myBtn.addEventListener("click", () => {
+        myDiv.style.backgroundColor = "crimson";
+      });
+    </script>
+  </body>
+</html>
