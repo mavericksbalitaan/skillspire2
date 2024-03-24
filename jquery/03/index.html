@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery Assignment 3</title>
+  </head>
+  <body>
+    <h1>jQuery Assignment 3</h1>
+    <h2>Seattle</h2>
+    <p>Temperature: <span id="temp"></span></p>
+    <p>Air pressure: <span id="airpressure"></span></p>
+    <p>Humidity: <span id="humidity"></span></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      const api_key = "9844386e703e82864d076dc7b730cf3c";
+      // Seattle
+      const lat = 47.608013;
+      const lon = -122.335167;
+      $(document).ready(function () {
+        $.ajax({
+          url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}`,
+        }).done(function (data) {
+          $("#temp").text(data.main.temp);
+          $("#airpressure").text(data.main.pressure);
+          $("#humidity").text(data.main.humidity);
+          console.log(data);
+        });
+      });
+    </script>
+  </body>
+</html>
