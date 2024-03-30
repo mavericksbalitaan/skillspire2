@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript OOP Assignment 02</title>
+  </head>
+  <body>
+    <h1>JavaScript OOP Assignment 02</h1>
+
+    <script>
+      // 1
+      class Boxer {
+        constructor(size, strength, wins, losses) {
+          this.size = size;
+          this.strength = strength;
+          this.wins = wins;
+          this.losses = losses;
+        }
+
+        // 2
+        printStats() {
+          console.log(
+            `Size: ${this.size} \n Strength: ${this.strength} \n Wins: ${this.wins} Losses: ${this.losses} \n`,
+          );
+        }
+      }
+
+      // 3
+      const boxerA = new Boxer(100, 100, 50, 0);
+      const boxerB = new Boxer(100, 100, 40, 10);
+
+      // 4
+      boxerA.printStats();
+      boxerB.printStats();
+
+      // 5
+      const userBet = prompt("Please choose 1 for Boxer A and 2 for Boxer B:");
+
+      if (userBet == 1) {
+        alert("You win the bet!");
+      } else {
+        alert("You lost the bet!");
+      }
+    </script>
+  </body>
+</html>

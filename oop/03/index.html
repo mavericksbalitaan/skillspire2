@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript OOP Assignment 03</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      class Person {
+        // 2
+        constructor(name, id) {
+          this.name = name;
+          this.id = id;
+        }
+
+        // 3
+        printStats() {
+          console.log(`${this.name} \n ${this.id}`);
+        }
+      }
+
+      // 4
+      class Employee extends Person {
+        // 5
+        constructor(name, id, salary, post) {
+          // 6
+          super(name, id);
+        }
+      }
+
+      // 7
+      const person1 = new Person("John", 001);
+      const employee1 = new Employee("Jane", 002, 1000, "developer");
+
+      // 8
+      person1.printStats();
+      employee1.printStats();
+    </script>
+  </body>
+</html>

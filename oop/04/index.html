@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript OOP Assignment 04</title>
+  </head>
+  <body>
+    <script>
+      // 1
+      class BigCat {
+        // 2
+        constructor() {
+          this.speed = 5;
+          this.strength = 5;
+          this.intelligence = 5;
+          this.health = 5;
+          this.durability = 5;
+        }
+      }
+
+      // 3
+      class Lion extends BigCat {
+        constructor() {
+          super();
+          this.strength = 50;
+          this.health = 50;
+        }
+
+        // 4
+        king(bigcat) {
+          if (bigcat instanceof Cheetah) {
+            if (Math.random() < 0.6) {
+              return;
+            } else {
+              bigcat.speed = 0;
+              bigcat.strength = 0;
+              bigcat.intelligence = 0;
+              bigcat.health = 0;
+              bigcat.durability = 0;
+            }
+          } else {
+            bigcat.speed = 0;
+            bigcat.strength = 0;
+            bigcat.intelligence = 0;
+            bigcat.health = 0;
+            bigcat.durability = 0;
+          }
+        }
+      }
+
+      // 5
+      class Leopard extends BigCat {
+        constructor() {
+          super();
+          this.strength = 30;
+          this.intelligence = 30;
+          this.health = 30;
+        }
+
+        // 6
+        attack(bigcat) {
+          if (bigcat instanceof Lion) {
+            bigcat.king(this);
+          } else if (bigcat instanceof Cheetah) {
+            if (Math.random() < 0.6) {
+              return;
+            } else {
+              bigcat.health -= 15;
+            }
+          } else {
+            bigcat.health -= 15;
+          }
+        }
+      }
+
+      // 7
+      class Cheetah extends BigCat {
+        constructor() {
+          super();
+          this.speed = 75;
+          this.strength = 25;
+          this.intelligence = 25;
+          this.health = 25;
+          this.durability = 25;
+        }
+
+        // 8
+        run(bigcat) {
+          if (bigcat instanceof Leopard) {
+            bigcat.attack(this);
+          } else if (bigcat instanceof Lion) {
+            bigcat.king(this);
+          } else {
+            // 9
+            bigcat.health -= 20;
+          }
+        }
+      }
+
+      // 10
+      const bigcat1 = new BigCat();
+      const lion1 = new Lion();
+      const leapard1 = new Leopard();
+      const cheetah1 = new Cheetah();
+
+      console.log(cheetah1.health);
+      lion1.king(cheetah1);
+      console.log(cheetah1.health);
+    </script>
+  </body>
+</html>

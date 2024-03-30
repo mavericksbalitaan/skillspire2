@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JavaScript OOP Assignment 01</title>
+  </head>
+  <body>
+    <h1>JavaScript OOP Assignment 01</h1>
+
+    <script>
+      // 1
+      class Car {
+        constructor(top_speed) {
+          this.top_speed = top_speed;
+          this.location = 0;
+        }
+
+        printTopSpeed() {
+          console.log(this.top_speed);
+        }
+
+        drive() {
+          this.location += 10;
+        }
+
+        stop() {
+          console.log(this.location);
+        }
+      }
+
+      // 2
+      const myCar = new Car(150);
+      myCar.printTopSpeed();
+
+      // 3
+      myCar.drive();
+      myCar.stop();
+    </script>
+  </body>
+</html>
