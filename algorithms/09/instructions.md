@@ -1,0 +1,1 @@
+Given an string create a function that checks to see if a string is a palindrome. A palindrome is a word that is spelled the same forward and backwards like “racecar”, “mom”, and “dad”.Hint: Reference the reverse string algorithm. No built functions unless absolutely needed!
