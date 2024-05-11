@@ -19,8 +19,6 @@ const middleware = (req, res, next) => {
   next();
 };
 
-app.use(middleware);
-
 let books = [
   {
     id: 0,
@@ -52,11 +50,11 @@ app.get("/books", (req, res) => {
 app.get("/books/:id", (req, res) => {
   const { id } = req.params;
   const book = books.filter((book) => book.id == id);
-  res.send(book);
+  res.status(200).send(book);
 });
 
 // 3
-app.post("/books", (req, res) => {
+app.post("/books", middleware, (req, res) => {
   const id = Math.floor(Math.random() * (1000 - books.length) + books.length);
   const { title, author, genre } = req.body;
   const newbook = {
@@ -66,11 +64,11 @@ app.post("/books", (req, res) => {
     genre,
   };
   books = [...books, newbook];
-  res.send(books);
+  res.status(200).send(books);
 });
 
 // 4
-app.put("/books/:id", (req, res) => {
+app.put("/books/:id", middleware, (req, res) => {
   const { id } = req.params;
   const { title, author, genre } = req.body;
   const index = books.findIndex((book) => book.id == id);
@@ -90,7 +88,7 @@ app.delete("/books/:id", (req, res) => {
   let index = books.findIndex((book) => book.id == id);
   if (index !== -1) {
     books.splice(index, 1);
-    res.send(books);
+    res.status(200).send(books);
   } else {
     res.status(404).send("Book not found");
   }
