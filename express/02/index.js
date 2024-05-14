@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 
 app.get("/display-name", (req, res) => {
   res.send("<h1>John Doe</h1>");
-});John Doe
+});
 
 app.get("/display-food", (req, res) => {
   res.send("<h1>Pizza</h1>");

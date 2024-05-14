@@ -57,19 +57,19 @@ let todos = [
   },
 ];
 
-// 1
+// 1 Retrieve a list of all todos
 app.get("/todos", (req, res) => {
   res.json(todos);
 });
 
-// 2
+// 2 Retrieve details of a specific todo by ID
 app.get("/todos/:id", (req, res) => {
   const { id } = req.params;
   const todo = todos.filter((todo) => todo.id == id);
   res.status(200).send(todo);
 });
 
-// 3
+// 3 Add a new todo to the list
 app.post("/todos", middleware, (req, res) => {
   const id = Math.floor(Math.random() * (1000 - todos.length) + todos.length);
   const { title, description, completed } = req.body;
@@ -80,10 +80,10 @@ app.post("/todos", middleware, (req, res) => {
     completed,
   };
   todos = [...todos, newtodo];
-  res.status(200).send(todos);
+  res.status(201).json({ message: "Todo added to the list", todos });
 });
 
-// 4
+// 4 Update details of a todo by ID
 app.put("/todos/:id", middleware, (req, res) => {
   const { id } = req.params;
   const { title, description, completed } = req.body;
@@ -98,16 +98,16 @@ app.put("/todos/:id", middleware, (req, res) => {
   }
 });
 
-// 5
+// 5 Delete a todo by ID
 app.delete("/todos/:id", (req, res) => {
-  let { id } = req.params;
-  let index = todos.findIndex((todo) => todo.id == id);
+  const { id } = req.params;
+  const index = todos.findIndex((todo) => todo.id == id);
   if (index !== -1) {
     todos.splice(index, 1);
     res.status(200).send(todos);
   } else {
     res.status(404).send("Todo not found");
-  }
+  }let
 });
 
 app.listen(PORT, () => {

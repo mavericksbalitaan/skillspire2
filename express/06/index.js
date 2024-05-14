@@ -65,19 +65,19 @@ let recipes = [
   },
 ];
 
-// 1
+// 1 Retrieve a list of all recipes
 app.get("/recipes", (req, res) => {
   res.json(recipes);
 });
 
-// 2
+// 2 Retrieve details of a specific recipe by ID
 app.get("/recipes/:id", (req, res) => {
   const { id } = req.params;
   const recipe = recipes.filter((recipe) => recipe.id == id);
   res.status(200).send(recipe);
 });
 
-// 3
+// 3 Add a new recipe to the collection
 app.post("/recipes", middleware, (req, res) => {
   const id = Math.floor(
     Math.random() * (1000 - recipes.length) + recipes.length,
@@ -89,10 +89,10 @@ app.post("/recipes", middleware, (req, res) => {
     ingredients,
   };
   recipes = [...recipes, newrecipe];
-  res.status(200).send(recipes);
+  res.status(201).json({ message: "Recipe added to the collection", recipes });
 });
 
-// 4
+// 4 Update details of a recipe by ID
 app.put("/recipes/:id", middleware, (req, res) => {
   const { id } = req.params;
   const { name, ingredients } = req.body;
@@ -106,10 +106,10 @@ app.put("/recipes/:id", middleware, (req, res) => {
   }
 });
 
-// 5
+// 5 Delete a recipe by ID
 app.delete("/recipes/:id", (req, res) => {
-  let { id } = req.params;
-  let index = recipes.findIndex((recipe) => recipe.id == id);
+  const { id } = req.params;
+  const index = recipes.findIndex((recipe) => recipe.id == id);
   if (index !== -1) {
     recipes.splice(index, 1);
     res.status(200).send(recipes);
