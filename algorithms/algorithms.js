@@ -123,6 +123,18 @@ averageInArray([1, 2, 3, 4, 5]);
 
 // Create a function that accepts an array as a parameter and pops off all of the values in an array. After popping off a value print out the value to the console. Hint: array.pop() is a function that pops off the last value in an array, this function also returns that value that it has popped off. Example running array.pop() on the following array [1,2,3,4,5] will pop off the last value in the array and return 5. The array will then become [1,2,3,4]. Use a while loop! (optional)
 
+// 1. Create a function that accepts an array as a parameter.
+// 2. Create a while-loop and use the condition when the array length is greater than 0.
+// 3. Inside the while-loop, use array.pop() to pop off the last value in an array and print that value.
+
+function popArray(array) {
+  while (array.length > 0) {
+    console.log("popArray", array.pop());
+  }
+}
+
+popArray([1, 2, 3, 4, 5]);
+
 // Create a function that accepts a string of 1’s and 0’s and returns a count of all of the 1’s in that string. Example: Given “1001011” return 4. Hint: Remember that strings are just an array of characters that can’t be altered. No built in functions unless they are absolutely necessary.
 
 // 1. Create a function that accepts a string of 1's and 0's
@@ -145,3 +157,47 @@ function countOnes(string) {
 }
 
 countOnes("1001011");
+
+// Given an array of numbers create a function that returns the max value in that array. Given [2,3,1,5,4] return 5. What is the initial max value?
+
+// 1. Create a function that accepts an array as a parameter
+// 2. Assign a new variable called min and set it to the first element of the array
+// 3. Create a for-loop and inside the for-loop compare each iteration if it greater than the max. If greater then reassign it to the variable max
+// 4. After the for-loop, return the variable max
+
+function maxValue(array) {
+  let max = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+  }
+
+  console.log("maxValue", max);
+  return max;
+}
+
+maxValue([2, 3, 1, 5, 4]);
+
+// Given an array of numbers create a function that returns the min value in that array. Given [2,3,1,5,4] return 1. What is the initial min value?
+
+// 1. Create a function that accepts an array as a parameter
+// 2. Assign a new variable called min and set it to the first element of the array
+// 3. Create a for-loop and inside the for-loop compare each iteration if it lesser than the min. If lesser then reassign it to the variable min
+// 4. After the for-loop, return the variable min
+
+function minValue(array) {
+  let min = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) {
+      min = array[i];
+    }
+  }
+
+  console.log("minValue", min);
+  return min;
+}
+
+minValue([2, 3, 1, 5, 4]);
