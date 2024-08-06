@@ -201,3 +201,28 @@ function minValue(array) {
 }
 
 minValue([2, 3, 1, 5, 4]);
+
+// Create a function that accepts a string of 1’s and 0’s and returns a new string where all of the 1's are replaced by 2's. Example: Given “1001011” return "2002022". Hint: Remember that strings are just an array of characters that can’t be altered. So you will have to create a new string from scratch and use that as your return string. No built in functions unless they are absolutely necessary.
+
+// 1. Create a function that accepts a string of 1's and 0's
+// 2. Initialize an empty string and assign it to a new variable
+// 3. Create a for-loop and for each iteration check the value if it is equal to 1
+// 4. If equal to 1, return 2 and add it to the new string. If equal to 0, add it to the new string
+// 5. After the for-loop, return the value of the new string
+
+function twos(string) {
+  let newString = "";
+
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] == 1) {
+      newString += 2;
+    } else {
+      newString += string[i];
+    }
+  }
+
+  console.log(newString);
+  return newString;
+}
+
+twos("1001011");
