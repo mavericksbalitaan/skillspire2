@@ -226,3 +226,40 @@ function twos(string) {
 }
 
 twos("1001011");
+
+// -Create a function that accepts a string and returns that string but reversed. Example: Given "string" return "gnirts"
+// -Given an string create a function that checks to see if a string is a palindrome. A palindrome is a word that is spelled the same forward and backwards like “racecar”, “mom”, and “dad”.Hint: Reference the reverse string algorithm. No built functions unless absolutely needed!
+
+// 1. Create a function that accepts a string as a parameter
+// 2. Assign a new variable string and set it to an empty string
+// 3. Create a for-loop that starts from the string length and ends to the first character of the string
+// 4. Inside the for-loop, add the character to the new string
+// 5. Return the new string
+
+function reverseString(string) {
+  let reversed = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversed += string[i];
+  }
+
+  console.log("reversedString", reversed);
+  return reversed;
+}
+
+reverseString("try");
+
+// 1. Create a function that accepts a string as a paramter
+// 2. Using the reverseString function, check if the given string is equal to the reversed string
+// 3. Return true if equal otherwise return false if is not a palindrome
+
+function isPalindrome(string) {
+  if (string == reverseString(string)) {
+    console.log("isPalindrome", string, true);
+    return true;
+  } else {
+    console.log("isPalindrome", string, false);
+    return false;
+  }
+}
+
+isPalindrome("racecar");
