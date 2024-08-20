@@ -263,3 +263,74 @@ function isPalindrome(string) {
 }
 
 isPalindrome("racecar");
+
+// -Create a function that accepts an input string and removes all white spaces from that string. Given  "        whitespaces     are     cool        "  return “whitespacesarecool”. Hint: You need to create a new string and return that string with the updated characters.
+// 1. Create a function that accepts a string
+// 2. Assign a new variable and set it to an empty string
+// 3. Create a for-loop and for each iteration check if it is an empty space
+// 4. If not empty, add the character to the new string
+
+function removeWhiteSpaces(string) {
+  let newString = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] != " ") {
+      newString += string[i];
+    }
+  }
+  console.log(newString);
+  return newString;
+}
+
+removeWhiteSpaces("        whitespaces     are     cool        ");
+
+// -Shift Array Values Left shiftArrayValsLeft(arr). Given an array, move all values forward (to the left) by one index, dropping the first value and leaving a 0 (zero) value at the end of the array. Given [1,2,3,4,5] return [2,3,4,5,0]
+// 1. Create a function that accepts an array as a parameter.
+// 2. Create a for-loop and for each iteration assign the index of that iteration by minus one
+// 3. On the last iteration, assign 0 to the last index
+
+function shiftArrayValsLeft(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i] = array[i + 1];
+  }
+  array[array.length - 1] = 0;
+  console.log(array);
+  return array;
+}
+
+shiftArrayValsLeft([1, 2, 3, 4, 5]);
+
+// Given an array with only 2 values. Swap the places of those 2 values and return the altered array. Given [1,2] return [2,1]. Hint: Use a temporary variable to store a value!
+// 1. Create a function that accepts an array with only 2 values as a parameter
+// 2. Assign a new variable and set it to 0
+// 3. Assign
+
+function swapValue(array) {
+  let temp = array[0];
+  array[0] = array[1];
+  array[1] = temp;
+
+  console.log("swapValue", array);
+  return array;
+}
+
+swapValue([1, 2]);
+
+// Array: Push Front. Given array and an additional value, create a function that inserts this value at the beginning of the array. Do this without using any built-in array methods except push(). Given [2,3,4,5],1 return [1,2,3,4,5]. Hint: Push the value to the end of the array. Use the swap method to move the value to the front.
+// 1. Create a function that accepts an array and a number
+// 2. Push the given number to the array
+// 3. Create a for-loop and for each iteration swap the value of that iteration to the previous value by using a temporary variable
+
+function pushFront(array, num) {
+  array.push(num);
+
+  for (let i = array.length - 1; i > 0; i--) {
+    let temp = array[i];
+    array[i] = array[i - 1];
+    array[i - 1] = temp;
+  }
+
+  console.log("pushFront", array);
+  return array;
+}
+
+pushFront([2, 3, 4, 5], 1);
