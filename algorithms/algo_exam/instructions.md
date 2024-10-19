@@ -22,7 +22,7 @@
 
 12.Shift Array Values Left shiftArrayValsLeft(arr). Given an array, move all values forward (to the left) by one index, dropping the first value and leaving a 0 (zero) value at the end of the array. Given [1,2,3,4,5] return [2,3,4,5,0]
 
-13. Given an array with only 2 values. Swap the places of those 2 values and return the altered array. Given [1,2] return [2,1]​
+13. Given an array with only 2 values. Swap the places of those 2 values and return the altered array. Given [1,2] return [2,1]
 
 14. Array swap pairs. Swap positions of successive pairs of values of a given array. If length is odd, do not change the final element. For [1,2,3,4], return [2,1,4,3]. For example, change input ["Brendan",true,42] to [true,"Brendan",42]. As with all array challenges, do this without using any built-in array methods.
 

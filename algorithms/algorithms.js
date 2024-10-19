@@ -334,3 +334,62 @@ function pushFront(array, num) {
 }
 
 pushFront([2, 3, 4, 5], 1);
+
+// Array: Pop Front Given array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop(). Given [1,2,3,4,5] return [2,3,4,5]
+
+// 1. Create a function that accepts an array as a parameter.
+// 2. Assign a new variable and set it to the first value of the array.
+// 3. Create a for-loop that starts at index 1 and ends to array.length - 1.
+// 4. For each iteration, assign the value to the previous index.
+// 5. Return the new variable and the array.
+
+function popFront(array) {
+  const firstEl = array[0];
+  for (let i = 1; i < array.length; i++) {
+    array[i - 1] = array[i];
+  }
+  array.pop();
+  console.log("popFront", firstEl, array);
+  return firstEl;
+}
+
+popFront([1, 2, 3, 4, 5]);
+
+// Remove Shorter Strings. Given a string array and value (length), remove any strings shorter than length from the array. Given ([“you”,”I”,”ab”], 3) return [“you”]. You can use any built in functions to remove a value. Hint find a method that removes a value from an array.
+// 1. Create a function that accepts a string array and value (length) as parameters.
+// 2. Using the filter method for array checked if the string is equal or more than the given value.
+// 3. Return the filtered array.
+
+function removeShorterString(array, val) {
+  console.log(
+    "removeShorterString",
+    array.filter((el) => el.length >= val),
+    val,
+  );
+  return array.filter((el) => el.length >= val);
+}
+
+removeShorterString(["you", "I", "ab"], 3);
+
+// Given a string of words (sentence) create a function that capitalizes every word in the string. Given “hello there skillspire” return “Hello There Skillspire”.
+// 1. Create a function that accepets a string as a parameter.
+// 2. Create a new variable and set it to an empty string.
+// 3. Split the string and assign it to a new variable.
+// 4. Using for-loop, iterate the split string and capitalize the first character and add it to the new variable.
+// 5. After the for-loop, return the new variable.
+
+function capitalizeString(string) {
+  let capitalizedString = "";
+  const splitString = string.split(" ");
+  for (let i = 0; i < splitString.length; i++) {
+    console.log(splitString[i]);
+    capitalizedString +=
+      splitString[i].charAt(0).toUpperCase() + splitString[i].slice(1) + " ";
+  }
+  console.log(capitalizedString);
+  return capitalizedString;
+}
+
+capitalizeString("hello there skillspire");
+
+// -Create a standalone function that accepts an input string,removes leading and trailing white spaces (at beginning and end only) from the string and capitalizes the first letter of every word, and return that string. Given  "        whitespaces     are     cool        " return “Whitespaces Are Cool”. Remember don’t use any built in methods to complete this task except any methods that capitalize a character. Methods like string.trim() are not allowed.
